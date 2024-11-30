@@ -1,14 +1,13 @@
-import Link from "next/link";
-import { ThemeModeToggle } from "./theme-mode-toggle";
-import { getSession } from "@auth0/nextjs-auth0";
-import { type ReactNode } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
+import { getSession } from "@auth0/nextjs-auth0";
+import Link from "next/link";
+import { type ReactNode } from "react";
+import { ThemeModeToggle } from "./theme-mode-toggle";
 
 export default async function Header() {
   const user = await getSession();
   let authContent: ReactNode;
-  console.log("user:::", user);
 
   if (user) {
     authContent = (
@@ -23,7 +22,7 @@ export default async function Header() {
   } else {
     authContent = (
       <Button asChild>
-        <Link href={"/api/auth/login"} className="uppercase font-bold">
+        <Link href={"/api/auth/login"} className="font-bold uppercase">
           Login
         </Link>
       </Button>
@@ -31,15 +30,14 @@ export default async function Header() {
   }
 
   return (
-    <header className="bg-background py-4 border-b">
+    <header className="border-b bg-background py-4">
       <div className="container flex items-center justify-between">
         <Link id="logo" href={"/"}>
           ProjeXpect
         </Link>
         <div
           id="auth-content"
-          className="flex gap-x-4 items-center justify-between"
-        >
+          className="flex items-center justify-between gap-x-4">
           <ThemeModeToggle />
           {authContent}
         </div>

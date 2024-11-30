@@ -1,11 +1,9 @@
+import { cn } from "@/lib/utils";
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { ThemeProvider } from "./providers/next-theme-provider";
-import Header from "./components/header";
-import Footer from "./components/footer";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -33,18 +31,14 @@ export default function RootLayout({
         <body
           className={cn(
             lato.variable,
-            "antialiased font-sans flex flex-col min-h-dvh"
-          )}
-        >
+            "flex min-h-dvh flex-col font-sans antialiased",
+          )}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            disableTransitionOnChange>
+            {children}
           </ThemeProvider>
         </body>
       </UserProvider>
