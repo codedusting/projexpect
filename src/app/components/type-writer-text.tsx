@@ -3,17 +3,19 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const TypewriterText = () => {
-  const texts = [
-    "uusing chat",
-    "gget features, user stories, and architecture",
-    "kknow dependencies and milestones",
-  ];
-
   const [displayText, setDisplayText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0); // To track which phrase we're typing
   const [looping, setLooping] = useState(false);
 
   useEffect(() => {
+    const texts = [
+      "uusing chat",
+      "gget features",
+      "rread user stories",
+      "ssee architecture",
+      "kknow dependencies",
+      "wwitness milestones",
+    ];
     let charIndex = 0;
     let interval: NodeJS.Timeout;
 
@@ -36,7 +38,7 @@ const TypewriterText = () => {
     };
 
     if (!looping) {
-      interval = setInterval(typeText, 150); // Type at an interval, adjusting for the speed
+      interval = setInterval(typeText, 60); // Type at an interval, adjusting for the speed
     } else {
       // After completion, reset the typing sequence
       setTimeout(() => {
@@ -50,25 +52,19 @@ const TypewriterText = () => {
   }, [looping, currentIndex]);
 
   return (
-    <motion.div className="text-6xl font-bold text-[#f8c84c] dark:text-[#f8c84c]">
+    <motion.div className="min-h-[60px] text-4xl font-bold text-[#f8c84c] dark:text-[#f8c84c] md:text-6xl">
       {displayText &&
-        displayText.split(" ").map(
-          (word, index) => (
-            console.log(word),
-            (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  delay: index * 0.2, // Delay between each word's appearance for typewriter effect
-                }}
-              >
-                {word}{" "}
-              </motion.span>
-            )
-          )
-        )}
+        displayText.split(" ").map((word, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              delay: index * 0.1, // Delay between each word's appearance for typewriter effect
+            }}>
+            {word}{" "}
+          </motion.span>
+        ))}
     </motion.div>
   );
 };

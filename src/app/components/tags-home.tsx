@@ -13,15 +13,14 @@ export default function TagsHome() {
     },
   ];
   return (
-    <div className="w-[90%] sm:w-[80%] md:w-[50%] mx-auto">
-      <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-4 mt-4">
+    <div className="mx-auto w-[90%] sm:w-[80%] md:w-[50%]">
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-2 sm:gap-4">
         {tags.map((tag, index) => (
           <div
             key={index}
-            className="flex items-center gap-2 w-full sm:w-auto justify-start sm:justify-center"
-          >
-            <span className="text-gray-700 w-3 h-3 rounded-full bg-[#f8c84c] dark:text-gray-300"></span>
-            <span className="text-gray-700 text-sm sm:text-base dark:text-gray-300">
+            className="flex w-full items-center justify-start gap-2 sm:w-auto sm:justify-center">
+            <span className="h-3 w-3 rounded-full bg-[#f8c84c] text-gray-700 dark:text-gray-300"></span>
+            <span className="text-sm text-gray-700 dark:text-gray-300 sm:text-base">
               {tag.name}
             </span>
           </div>
