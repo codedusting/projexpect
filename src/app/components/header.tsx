@@ -1,20 +1,20 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { getSession } from "@auth0/nextjs-auth0";
+import { auth0 } from "@/lib/auth0";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { ThemeModeToggle } from "./theme-mode-toggle";
 
 export default async function Header() {
-  const user = await getSession();
+  const session = await auth0.getSession();
   let authContent: ReactNode;
 
-  if (user) {
+  if (session) {
     authContent = (
       <Avatar>
         <AvatarImage
-          src={user.user.picture || "https://github.com/codedusting.png"}
-          alt={`@${user.user.nickname}` || "@codedusting"}
+          src={session.user.picture || "https://github.com/codedusting.png"}
+          alt={`@${session.user.nickname}` || "@codedusting"}
         />
         <AvatarFallback>CD</AvatarFallback>
       </Avatar>
@@ -22,7 +22,7 @@ export default async function Header() {
   } else {
     authContent = (
       <Button asChild>
-        <Link href={"/api/auth/login"} className="font-bold uppercase">
+        <Link href={"/api/auth/login"} className="font-bold text-white">
           Login
         </Link>
       </Button>
@@ -32,7 +32,7 @@ export default async function Header() {
   return (
     <header className="border-b bg-background py-4">
       <div className="container flex items-center justify-between">
-        <Link id="logo" href={"/"}>
+        <Link id="logo" href={"/"} className="text-xl font-bold lowercase">
           ProjeXpect
         </Link>
         <div

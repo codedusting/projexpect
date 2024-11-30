@@ -1,13 +1,12 @@
 import { cn } from "@/lib/utils";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./providers/next-theme-provider";
 
-const lato = Lato({
+const lato = DM_Sans({
   subsets: ["latin"],
-  variable: "--lato",
+  variable: "--font-work-sans",
   weight: ["400", "700"],
 });
 
@@ -27,7 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <UserProvider>
         <body
           className={cn(
             lato.variable,
@@ -41,7 +39,6 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </body>
-      </UserProvider>
     </html>
   );
 }

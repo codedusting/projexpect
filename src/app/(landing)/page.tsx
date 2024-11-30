@@ -1,3 +1,3 @@
 export default function HomePage() {
-  return <section className="container">Home page</section>;
+  return <section className="max-w-screen-md mx-auto">Home page</section>;
 }
