@@ -1,33 +1,33 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { auth0 } from "@/lib/auth0";
+// import { auth0 } from "@/lib/auth0";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { ThemeModeToggle } from "./theme-mode-toggle";
 
 export default async function Header() {
-  const session = await auth0.getSession();
+  // const session = await auth0.getSession();
   let authContent: ReactNode;
 
-  if (session) {
-    authContent = (
-      <Avatar>
-        <AvatarImage
-          src={session.user.picture || "https://github.com/codedusting.png"}
-          alt={`@${session.user.nickname}` || "@codedusting"}
-        />
-        <AvatarFallback>CD</AvatarFallback>
-      </Avatar>
-    );
-  } else {
+  // if (session) {
+  //   authContent = (
+  //     <Avatar>
+  //       <AvatarImage
+  //         src={session.user.picture || "https://github.com/codedusting.png"}
+  //         alt={`@${session.user.nickname}` || "@codedusting"}
+  //       />
+  //       <AvatarFallback>CD</AvatarFallback>
+  //     </Avatar>
+  //   );
+  // } else {
+    // eslint-disable-next-line prefer-const
     authContent = (
       <Button asChild>
-        <Link href={"/api/auth/login"} className="font-bold text-white">
+        <Link href={"/auth/login"} className="font-bold text-white">
           Login
         </Link>
       </Button>
     );
-  }
+  // }
 
   return (
     <header className="border-b bg-background py-4">

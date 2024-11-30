@@ -1,4 +1,8 @@
+import { PageProps } from "@/lib/types";
 
-export default function ProposalPage() {
-  return <section>ProposalPage</section>;
+export default async function ProposalPage({
+  searchParams,
+}: PageProps) {
+  const idea = (await searchParams).idea;
+  return <section>ProposalPage | {idea}</section>;
 }
