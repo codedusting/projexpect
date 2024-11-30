@@ -8,8 +8,7 @@ import { Button } from "@/components/ui/button";
 export default async function Header() {
   const user = await getSession();
   let authContent: ReactNode;
-  console.log("user:::", user);
-
+  
   if (user) {
     authContent = (
       <Avatar>
@@ -31,7 +30,7 @@ export default async function Header() {
   }
 
   return (
-    <header className="bg-background py-4 border-b">
+    <header className="bg-background py-4 border-b z-50">
       <div className="container flex items-center justify-between">
         <Link id="logo" href={"/"}>
           ProjeXpect
