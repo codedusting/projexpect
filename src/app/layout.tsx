@@ -1,15 +1,12 @@
-import type { Metadata } from "next";
-import { Lato } from "next/font/google";
-import "./globals.css";
 import { cn } from "@/lib/utils";
-import { UserProvider } from "@auth0/nextjs-auth0/client";
+import type { Metadata } from "next";
+import { DM_Sans } from "next/font/google";
+import "./globals.css";
 import { ThemeProvider } from "./providers/next-theme-provider";
-import Header from "./components/header";
-import Footer from "./components/footer";
 
-const lato = Lato({
+const lato = DM_Sans({
   subsets: ["latin"],
-  variable: "--lato",
+  variable: "--font-work-sans",
   weight: ["400", "700"],
 });
 
@@ -29,25 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <UserProvider>
         <body
           className={cn(
             lato.variable,
-            "antialiased font-sans flex flex-col min-h-dvh"
-          )}
-        >
+            "flex min-h-dvh flex-col font-sans antialiased",
+          )}>
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
-            disableTransitionOnChange
-          >
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
+            disableTransitionOnChange>
+            {children}
           </ThemeProvider>
         </body>
-      </UserProvider>
     </html>
   );
 }
