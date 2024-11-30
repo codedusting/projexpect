@@ -15,11 +15,11 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | TrendAIzer`,
-    default: "TrendAIzer",
+    template: `%s | ProjeXpect`,
+    default: "ProjeXpect",
   },
   description:
-    "TrendAIzer is a cutting-edge tool designed to identify and analyze the latest trends using AI",
+    "ProjeXpect is a powerful application designed to deliver fast, accurate, and data-driven project estimations using advanced AI algorithms",
 };
 
 export default function RootLayout({
