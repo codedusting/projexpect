@@ -10,8 +10,8 @@ export default function SearchHome() {
   const [data, formAction, isPending] = useActionState(searchIdeaAction, null);
 
   return (
-    <Form action={formAction} className="w-full max-w-screen-md">
-      <Label className="relative">
+    <Form action={formAction} className="w-full max-w-screen-md relative">
+      <Label className="">
         <Input
           autoFocus
           type="text"
@@ -29,7 +29,7 @@ export default function SearchHome() {
         <Button
           type="submit"
           disabled={isPending}
-          className="absolute bottom-[45%] right-4 rounded-r-full">
+          className={`absolute ${data?.error ? "top-[33%]": "top-[36%]"} -translate-y-[50%] right-4 rounded-r-full`}>
           {isPending ? (
             <Loader2Icon className="animate-spin" />
           ) : (

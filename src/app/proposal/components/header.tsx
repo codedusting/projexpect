@@ -34,7 +34,7 @@ export default async function ProposalHeader() {
         <Link id="logo" href={"/"} className="text-xl font-bold lowercase">
           ProjeXpect
         </Link>
-        <h1 className="text-2xl font-bold">Project Proposal</h1>
+        <h1 className="text-2xl font-bold hidden md:block">Project Proposal</h1>
         <div
           id="auth-content"
           className="flex items-center justify-between gap-x-4">

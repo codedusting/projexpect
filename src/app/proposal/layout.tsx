@@ -10,10 +10,10 @@ export default function ProposalLayout({
     <>
       <ProposalHeader />
       <section className="flex h-dvh">
-        <aside className="h-full w-80 overflow-y-auto border-r bg-background">
+        <aside className="h-full  lg:w-[20%] overflow-y-auto border-r bg-background">
           <SideNavigation />
         </aside>
-        <section id="route-content" className="flex-1 p-6">
+        <section id="route-content w-full lg:w-[80%]" className="flex-1 p-6">
           {children}
         </section>
       </section>

@@ -30,8 +30,8 @@ export default async function Header() {
   // }
 
   return (
-    <header className="border-b bg-background py-4">
-      <div className="container flex items-center justify-between px-4 lg:px-0">
+    <header className="border-b  bg-background py-4">
+      <div className="container  items-center justify-between px-4 lg:px-0">
         <Link id="logo" href={"/"} className="text-xl font-bold lowercase">
           ProjeXpect
         </Link>
