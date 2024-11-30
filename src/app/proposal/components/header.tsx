@@ -4,33 +4,33 @@ import { type ReactNode } from "react";
 import { ThemeModeToggle } from "../../components/theme-mode-toggle";
 
 export default async function ProposalHeader() {
- // const session = await auth0.getSession();
- let authContent: ReactNode;
+  // const session = await auth0.getSession();
+  let authContent: ReactNode;
 
- // if (session) {
- //   authContent = (
- //     <Avatar>
- //       <AvatarImage
- //         src={session.user.picture || "https://github.com/codedusting.png"}
- //         alt={`@${session.user.nickname}` || "@codedusting"}
- //       />
- //       <AvatarFallback>CD</AvatarFallback>
- //     </Avatar>
- //   );
- // } else {
-   // eslint-disable-next-line prefer-const
-   authContent = (
-     <Button asChild>
-       <Link href={"/auth/login"} className="font-bold text-white">
-         Login
-       </Link>
-     </Button>
-   );
- // }
+  // if (session) {
+  //   authContent = (
+  //     <Avatar>
+  //       <AvatarImage
+  //         src={session.user.picture || "https://github.com/codedusting.png"}
+  //         alt={`@${session.user.nickname}` || "@codedusting"}
+  //       />
+  //       <AvatarFallback>CD</AvatarFallback>
+  //     </Avatar>
+  //   );
+  // } else {
+  // eslint-disable-next-line prefer-const
+  authContent = (
+    <Button asChild>
+      <Link href={"/auth/login"} className="font-bold text-white">
+        Login
+      </Link>
+    </Button>
+  );
+  // }
 
   return (
     <header className="border-b bg-background py-4">
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between px-4 lg:px-0">
         <Link id="logo" href={"/"} className="text-xl font-bold lowercase">
           ProjeXpect
         </Link>

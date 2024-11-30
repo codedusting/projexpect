@@ -19,19 +19,19 @@ export default async function Header() {
   //     </Avatar>
   //   );
   // } else {
-    // eslint-disable-next-line prefer-const
-    authContent = (
-      <Button asChild>
-        <Link href={"/auth/login"} className="font-bold text-white">
-          Login
-        </Link>
-      </Button>
-    );
+  // eslint-disable-next-line prefer-const
+  authContent = (
+    <Button asChild>
+      <Link href={"/auth/login"} className="font-bold text-white">
+        Login
+      </Link>
+    </Button>
+  );
   // }
 
   return (
     <header className="border-b bg-background py-4">
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between px-4 lg:px-0">
         <Link id="logo" href={"/"} className="text-xl font-bold lowercase">
           ProjeXpect
         </Link>

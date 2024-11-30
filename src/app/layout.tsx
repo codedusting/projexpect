@@ -26,19 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <body
-          className={cn(
-            lato.variable,
-            "flex min-h-dvh flex-col font-sans antialiased",
-          )}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange>
-            {children}
-          </ThemeProvider>
-        </body>
+      <body
+        className={cn(
+          lato.variable,
+          "flex min-h-dvh flex-col font-sans antialiased",
+        )}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
