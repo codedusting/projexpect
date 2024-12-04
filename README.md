@@ -76,14 +76,13 @@ pnpm install
 ## **Live Project**
 
 Experience the live version of AI Trend Analyzer here:
-👉 [Zero To Hero](https://zero-to-hero.vercel.app)
+👉 [Projexpect](https://projexpect.codedusting.in)
 
 ---
 
 ## **Attribution**
 
 This project was built during the [GeekyAnts India Hackathon](https://geekyants.com) on **November 30**.
-Special thanks to the [Zero to Hero](https://zero-to-hero.vercel.app) initiative for inspiring the team.
 
 ---
 
